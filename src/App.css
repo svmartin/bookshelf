@@ -12,7 +12,7 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #0074D9;
   text-align: center;
 }
 .list-books-title h1 {
@@ -38,6 +38,8 @@ body, .app {
 
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
+  color: #0074D9;
+  text-align: center;
 }
 .bookshelf-books {
   text-align: center;
@@ -53,8 +55,8 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
-  background-image: url('./icons/add.svg');
+  background: #0074D9;
+  background-image: url('http://svgshare.com/i/3Bu.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
@@ -92,7 +94,7 @@ body, .app {
   width: 50px;
   height: 53px;
   background: white;
-  background-image: url('./icons/arrow-back.svg');
+  background-image: url('http://svgshare.com/i/3Bf.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
@@ -124,7 +126,7 @@ body, .app {
 }
 .book-title,
 .book-authors {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 .book-title {
   margin-top: 10px;
@@ -147,8 +149,8 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
-  background-image: url('./icons/arrow-drop-down.svg');
+  background: #0074D9;
+  background-image: url('http://svgshare.com/i/3CX.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
@@ -163,10 +165,10 @@ body, .app {
 
 /* book cover */
 
-.book-cover {
+/* .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background: #eee;
-}
+} */
 .book-cover-title {
   padding: 20px 10px 0;
   text-align: center;
