@@ -18,18 +18,25 @@ class BooksApp extends React.Component {
   }
 
   // technically: add to, change or remove from a shelf
-  moveBook = (targetBook, targetDestination) => { // eslint-disable-line
-    BooksAPI.update(targetBook, targetDestination).then(response => { // eslint-disable-line
 
+  moveBook = (targetBook, targetDestination) => { // eslint-disable-line
+    BooksAPI.update(targetBook, targetDestination)
+    .then(response => { // eslint-disable-line
+      let books = this.state.books
+      this.setState({ books: books })
     })
   }
 
   render() {
     return(
       <div className="app">
-        <Route exact path="/" render={() => <Shelves books={this.state.books} />} />
+        <Route exact path="/" render={() =>
+          <Shelves books={this.state.books} />}
+        />
 
-        <Route exact path="/search" render={() => <Search />} />
+        <Route exact path="/search" render={() =>
+          <Search />}
+        />
       </div>
     )
   }

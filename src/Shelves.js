@@ -3,7 +3,7 @@ import OpenSearch from "./OpenSearch";
 import Shelf from "./Shelf";
 
 class Shelves extends React.Component {
-  
+
 
   render() {
     return (
@@ -13,9 +13,9 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf section="Currently Reading" />
-            <Shelf section="Want to Read" />
-            <Shelf section="Have Read" />
+            <Shelf section="Currently Reading" books={this.props.books}/>
+            <Shelf section="Want to Read" books={this.props.books}/>
+            <Shelf section="Have Read" books={this.props.books}/>
           </div>
         </div>
         <OpenSearch />
