@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import NoSearchResults from './NoSearchResults'
+import ChangeShelf from './ChangeShelf'
 
 
 class Search extends React.Component {
@@ -85,6 +86,7 @@ class Search extends React.Component {
                           backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
                         }}
                       />
+                      <ChangeShelf />
                     </div>
                     <div className="book-title">{book.title}</div>
                   </div>
