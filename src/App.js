@@ -7,17 +7,20 @@ import Search from "./Search";
 import "./App.css";
 
 class BooksApp extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      books: []
-    }
+  state = {
+    books: []
   }
 
   componentDidMount = () => {
     BooksAPI.getAll().then((books) => {
       this.setState({ books: books })
+    })
+  }
+
+  // technically: add to, change or remove from a shelf
+  moveBook = (targetBook, targetDestination) => { // eslint-disable-line
+    BooksAPI.update(targetBook, targetDestination).then(response => { // eslint-disable-line
+
     })
   }
 
