@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
+import NoSearchResults from './NoSearchResults'
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -18,15 +20,25 @@ class Search extends React.Component {
       { query: query }
     );
 
+    // if (query) {
+    //   BooksAPI.search(query).then((books) => {
+    //     if (books.error) {
+    //       console.log("what went wrong: ", books.error)
+    //     }
+    //     this.setState({ results: books })
+    //   })
+    // } else {
+    //   this.setState({ results: [] })
+    // }
     if (query) {
       BooksAPI.search(query).then((books) => {
-        if (books.error) {
-          console.log("what went wrong: ", books.error)
+        if (!books.error) {
+          this.setState({ results: books })
+        } else {
+          this.setState({ results: [] })
+          console.log(books.error)
         }
-        this.setState({ results: books })
       })
-    } else {
-      this.setState({ results: [] })
     }
   }
 
@@ -80,9 +92,9 @@ class Search extends React.Component {
               ))}
 
             </ol>
-          )} {/**/}
-          { this.state.results === 0 && (
-            <h1>0 results returned.</h1>
+          )} {/*how to deal with no search results?*/}
+          { this.state.results.length === 0 && (
+            <NoSearchResults />
           )}
         </div>
       </div>
